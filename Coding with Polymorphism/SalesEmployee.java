@@ -12,15 +12,15 @@ package trivera.core.employee;
  * of Trivera Technologies, LLC
  *
  * Copyright (c) 2019 Trivera Technologies, LLC.
- * http://www.triveratech.com   
+ * http://www.triveratech.com
  * </p>
  * @author Trivera Technologies Tech Team.
  */
 
 //CODE5:
-//Ensure that SalesEmployee inherits from Employee 
-public class SalesEmployee {
-    
+//Ensure that SalesEmployee inherits from Employee
+public class SalesEmployee extends Employee{
+
     // Instance fields
     private double salesAmount;
     private double commissionRate;
@@ -28,11 +28,32 @@ public class SalesEmployee {
     //CODE6:
     //Define a constructor which accepts a name and a employee number,
     //and use the constructor of Employee
+    public SalesEmployee(String name, int empID) {
+        super(name, empID);
+    }
 
     //CODE7:
     //Define getter and setter methods for salesAmount and commissionRate
+    public double getCommissionRate(){
+        return commissionRate;
+    }
+
+    public double getSalesAmount(){
+        return salesAmount;
+    }
+
+    public void setCommissionRate(double commissionRate) {
+        this.commissionRate = commissionRate;
+    }
+
+    public void setSalesAmount(double salesAmount) {
+        this.salesAmount = salesAmount;
+    }
 
     //CODE8:
     //Override the calcSalary method and calculate the salary based on sales
- 
+    public double calcSalary() {
+        return this.salesAmount * this.commissionRate;
+    }
+
 }
