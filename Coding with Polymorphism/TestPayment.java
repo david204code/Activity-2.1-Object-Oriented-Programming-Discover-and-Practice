@@ -12,7 +12,7 @@ package trivera.core.employee;
  * of Trivera Technologies, LLC
  *
  * Copyright (c) 2019 Trivera Technologies, LLC.
- * http://www.triveratech.com   
+ * http://www.triveratech.com
  * </p>
  * @author Trivera Technologies Tech Team.
  */
@@ -29,20 +29,32 @@ public class TestPayment {
 
         //CODE9:
         //Create an array of Employee of length 2
+        Employee[] staff = new Employee[2];
 
         //CODE10:
         //Create Jennifer as a SalesEmployee,
         //and set values for salesAmount and commission
+        jennifer = new SalesEmployee("Jennifer Wirth", 12);
+        jennifer.setSalesAmount(200000);
+        jennifer.setCommissionRate(0.04);
 
         //CODE11:
         //Create John as an HourlyEmployee,
         //and set values for hourRate and hoursWorked for john
+        john = new HourlyEmployee("John Wirth", 35);
+        john.setHourRate(16);
+        john.setHoursWorked(160);
 
         //CODE12:
         //Add both Jennifer and John to the Employee array
+        staff[0] = jennifer;
+        staff[1] = john;
 
-        //CODE13:        
+        //CODE13:
         //Loop through the list of Employees and print out the salary.
+        for (int i = 0; i < staff.length; i++) {
+            System.out.println("Employee: " + staff[i] + ", Salary: " + staff[i].calcSalary());
+        }
 
     }
 
