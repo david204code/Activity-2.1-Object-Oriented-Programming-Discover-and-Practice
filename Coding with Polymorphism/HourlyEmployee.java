@@ -12,15 +12,15 @@ package trivera.core.employee;
  * of Trivera Technologies, LLC
  *
  * Copyright (c) 2019 Trivera Technologies, LLC.
- * http://www.triveratech.com   
+ * http://www.triveratech.com
  * </p>
  * @author Trivera Technologies Tech Team.
  */
 
 //CODE1:
-//Ensure that HourlyEmployee inherits from Employee 
-public class HourlyEmployee {
-    
+//Ensure that HourlyEmployee inherits from Employee
+public class HourlyEmployee extends Employee {
+
     //Instance fields
     private double hoursWorked;
     private double hourRate;
@@ -31,10 +31,31 @@ public class HourlyEmployee {
     //CODE2:
     //Define a constructor that accepts a name and a employee number,
     //and use the constructor of the parent class Employee
+    public HourlyEmployee(String name, int empID) {
+        super(name, empID);
+    }
 
     //CODE3:
     //Define getter and setter methods for hoursWorked and hourRate
+    public double getHourRate() {
+        return hourRate;
+    }
+
+    public double getHoursWorked() {
+        return hoursWorked;
+    }
+
+    public void setHoursWorked(double hoursWorked) {
+        this.hoursWorked = hoursWorked;
+    }
+
+    public void setHourRate(double hourRate) {
+        this.hourRate = hourRate;
+    }
 
     //CODE4:
     //Override the calcSalary method and calculate the salary based on hoursWorked
+    public double calcSalary() {
+        return this.hourRate * this.hoursWorked;
+    }
 }
